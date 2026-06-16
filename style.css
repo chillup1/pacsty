@@ -1,6 +1,193 @@
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "MoanaRainy";
+    src: url("./fonts/MoanaRainyDemoRegular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "PitchSans";
+    src: url("./fonts/PitchSans-RegularItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Felixtowe";
+    src: url("./fonts/felixtowe-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("./fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
 body {
-  font-family: Arial, sans-serif;
-  padding: 40px;
-  background: #f6f0ea;
-  color: #1f1f1f;
+    margin: 0;
+    background: #ffffff;
+    color: #1f1f1f;
+    font-family: "Montserrat", Arial, sans-serif;
+    position: relative;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* margin: 24px 40px 0;*/
+    padding: 18px 36px;
+
+    background: linear-gradient(90deg, #f5b3ad 0%, #ff6f61 100%);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    z-index: 10;
+}
+
+.logo {
+    font-family: "MoanaRainy", serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-family: "Montserrat", Arial, sans-serif;
+    text-decoration: none;
+    color: inherit;
+        transition: opacity 0.2s ease;
+
+}
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+.hero {
+    min-height: calc(100vh - 86px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 110px;
+
+    padding: 0 60px;
+}
+
+.hero-image {
+    width: 620px;
+    overflow: hidden;
+}
+
+.hero-image video {
+    width: 760px;
+    height: auto;
+
+    display: block;
+
+    margin-left: -70px;
+}
+
+.hero-content {
+    max-width: 460px;
+    padding-top: 20px;
+}
+
+.hero-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 50px;
+}
+
+.name {
+    font-family: "MoanaRainy", serif;
+    font-size: 3.4rem;
+    line-height: 0.9;
+}
+
+.connector {
+    font-family: "PitchSans", sans-serif;
+    font-size: 2.4rem;
+    top: 4px;
+    font-style: italic;
+
+    color: #f26f65;
+
+    position: relative;
+}
+
+.info-block {
+    margin-bottom: 30px;
+}
+
+.info-block h2 {
+    font-family: "PitchSans", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #f26f65;
+    margin: 0;
+}
+
+.info-block p {
+    font-family: "Felixtowe", serif;
+    font-size: 2rem;
+    margin-top: 8px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+}
+
+.scroll-indicator a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: #1f1f1f;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+}
+
+
+.arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border: 2px solid #1f1f1f;
+    border-radius: 999px;
+
+    font-family: "Felixtowe", serif;
+    font-size: 2.2rem;
+    line-height: 1;
+
+    animation: arrow-bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes arrow-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
 }

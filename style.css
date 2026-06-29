@@ -596,13 +596,14 @@ nav {
     }
 
     .hero-image video {
-        height: 100%;
+        height: auto;
         width: 430px;
 
         display: block;
 
         margin-left: -45px;
         object-fit: cover;
+
     }
 
     .hero-content {
@@ -759,7 +760,7 @@ nav {
     flex-direction: column;
     gap: 18px;
 
-    padding-bottom: 22px;
+    padding-bottom: 0px;
 }
 
 .faq-answer p {

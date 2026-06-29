@@ -10,20 +10,13 @@ faqItems.forEach((item) => {
 
 let lastPaw = 0;
 
-document.addEventListener("mousemove", (e) => {
-    const now = Date.now();
-
-    // Don't create too many paw prints
-    if (now - lastPaw < 200) return;
-
-    lastPaw = now;
-
+function createPaw(x, y) {
     const paw = document.createElement("div");
     paw.classList.add("paw-print");
     paw.textContent = "🐾";
 
-    paw.style.left = `${e.clientX}px`;
-    paw.style.top = `${e.clientY}px`;
+    paw.style.left = `${x}px`;
+    paw.style.top = `${y}px`;
 
     const rotation = Math.floor(Math.random() * 360);
     paw.style.setProperty("--rotation", `${rotation}deg`);
@@ -33,4 +26,27 @@ document.addEventListener("mousemove", (e) => {
     setTimeout(() => {
         paw.remove();
     }, 1200);
+}
+
+document.addEventListener("mousemove", (e) => {
+    const now = Date.now();
+    if (now - lastPaw < 220) return;
+
+    lastPaw = now;
+    createPaw(e.clientX, e.clientY);
+});
+
+document.addEventListener("touchstart", (e) => {
+    const touch = e.touches[0];
+    createPaw(touch.clientX, touch.clientY);
+});
+
+document.addEventListener("touchmove", (e) => {
+    const now = Date.now();
+    if (now - lastPaw < 120) return;
+
+    lastPaw = now;
+
+    const touch = e.touches[0];
+    createPaw(touch.clientX, touch.clientY);
 });

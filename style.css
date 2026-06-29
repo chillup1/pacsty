@@ -114,11 +114,12 @@ nav {
 
 .section {
     min-height: 100vh;
+    padding: 70px 0 50px;
     position: relative;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .name {
@@ -220,13 +221,13 @@ nav {
 
 .section-container {
     width: min(1000px, 90%);
-    margin: auto;
+    margin: 0 auto;
 }
 
 .section-title {
     font-family: "MoanaRainy";
     font-size: 3rem;
-    margin-bottom: 80px;
+    margin-bottom: 45px;
 }
 
 .placeholder {
@@ -536,7 +537,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .section-title-row .section-title {
@@ -585,6 +586,14 @@ nav {
     .nav-links a {
         font-size: 0.75rem;
     }
+
+    .section {
+    padding: 40px 0 30px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
 
     .hero {
         min-height: calc(100vh - 60px);
@@ -763,7 +772,7 @@ nav {
 
 .section-title-row {
     gap: 14px;
-    margin-bottom: 36px;
+    margin-bottom: 30px;
 }
 
 .faq-list {

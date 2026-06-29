@@ -113,7 +113,7 @@ nav {
 }
 
 .section {
-    min-height: 100vh;
+    min-height: auto;
     padding: 70px 0 50px;
     position: relative;
 
@@ -216,7 +216,7 @@ nav {
 
 .section {
     min-height: 100vh;
-    padding: 120px 0;
+    padding: 40px 0;
 }
 
 .section-container {

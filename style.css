@@ -2,6 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 @font-face {
     font-family: "MoanaRainy";
     src: url("./fonts/MoanaRainyDemoRegular.ttf") format("truetype");
@@ -558,4 +559,92 @@ nav {
     50%  { transform: rotate(4deg); }
     75%  { transform: rotate(-2deg); }
     100% { transform: rotate(0deg); }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+
+    nav {
+        padding: 14px 20px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        min-height: calc(100vh - 60px);
+
+        flex-direction: column;
+        gap: 28px;
+
+        padding: 30px 24px 90px;
+        text-align: center;
+    }
+
+.hero-image {
+    width: 100%;
+    max-width: 360px;
+
+    overflow: hidden;
+}
+
+.hero-image video {
+    width: 100%;
+    margin-left: 0;
+
+    display: block;
+}
+
+    .hero-content {
+        max-width: 100%;
+        padding-top: 0;
+    }
+
+    .hero-title {
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 34px;
+    }
+
+    .name {
+        font-size: 2.7rem;
+    }
+
+    .connector {
+        font-size: 1.7rem;
+        top: 2px;
+    }
+
+    .info-block {
+        margin-bottom: 22px;
+    }
+
+    .info-block h2 {
+        font-size: 1rem;
+    }
+
+    .info-block p {
+        font-size: 1.65rem;
+    }
+
+    .hero .scroll-indicator {
+        bottom: 24px;
+    }
+
+    .arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 1.8rem;
+    }
 }

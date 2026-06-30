@@ -612,7 +612,7 @@ nav {
         max-width: 340px;
 
         overflow: hidden;
-    transform: translateX(-10px);
+        transform: translateX(-10px);
 
     }
 

@@ -75,23 +75,25 @@ nav {
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     position: relative;
 
 
-    gap: 110px;
+    gap: 140px;
+    width: min(1400px, 90vw);
+    margin: 0 auto;
 
-    padding: 0 60px;
+    padding: 0 40px;
 }
 
 .hero-image {
-    width: 620px;
+    width: 680px;
     overflow: hidden;
 }
 
 .hero-image video {
-    width: 760px;
+    width: 840px;
     height: auto;
 
     display: block;

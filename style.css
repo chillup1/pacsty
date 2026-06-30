@@ -80,20 +80,20 @@ nav {
     position: relative;
 
 
-    gap: 60px;
-    width: min(1280px, 92vw);
+    gap: 100px;
+    width: min(1400px, 90vw);
     margin: 0 auto;
 
-    padding: 0 40px;
+    padding: 0 60px;
 }
 
 .hero-image {
-    width: 600px;
+    width: 620px;
     overflow: hidden;
 }
 
 .hero-image video {
-    width: 840px;
+    width: 760px;
     height: auto;
 
     display: block;

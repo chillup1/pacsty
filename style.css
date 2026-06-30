@@ -80,7 +80,7 @@ nav {
     position: relative;
 
 
-    gap: 70px;
+    gap: 60px;
     width: min(1280px, 92vw);
     margin: 0 auto;
 
@@ -88,7 +88,7 @@ nav {
 }
 
 .hero-image {
-    width: 680px;
+    width: 600px;
     overflow: hidden;
 }
 

@@ -45,13 +45,18 @@ nav {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 
     position: sticky;
-    z-index: 10;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
     font-family: "MoanaRainy", serif;
     font-size: 1.5rem;
     letter-spacing: 2px;
+    text-decoration: none;
+    color: inherit;
+    transform: translateY(4px);
+
 }
 
 .nav-links {
@@ -85,6 +90,8 @@ nav {
     margin: 0 auto;
 
     padding: 0 60px;
+    scroll-margin-top: 0;
+
 }
 
 .hero-image {
@@ -148,7 +155,7 @@ nav {
 
 .info-block h2 {
     font-family: "PitchSans", sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: #f26f65;
     margin: 0;
@@ -252,7 +259,7 @@ nav {
 
 .program-item {
     display: grid;
-    grid-template-columns: 170px 1fr;
+    grid-template-columns: 230px 1fr;
 
     gap: 40px;
 
@@ -274,11 +281,13 @@ nav {
 
 .program-time {
     font-family: "PitchSans";
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 
     color: #f26f65;
 
     padding-top: 6px;
+    text-align: center;
+
 }
 
 .program-content h3 {
@@ -293,7 +302,7 @@ nav {
 .program-content p {
     margin: 0;
 
-    max-width: 480px;
+    max-width: 600px;
 
     font-family: "Montserrat";
     font-size: 1rem;
@@ -538,6 +547,10 @@ nav {
 
     nav {
         padding: 12px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
     }
 
     .logo {
@@ -555,6 +568,8 @@ nav {
     .section {
     min-height: auto;
     padding: 40px 0 30px;
+    scroll-margin-top: 0px;
+
 }
 
 .section-title {
@@ -573,6 +588,8 @@ nav {
 
         padding: 32px 24px 90px;
         text-align: center;
+        scroll-margin-top: 0;
+
     }
 
     .hero-title-mobile {
@@ -595,6 +612,8 @@ nav {
         max-width: 340px;
 
         overflow: hidden;
+        transform: none;
+
     }
 
     .hero-image video {
@@ -632,7 +651,7 @@ nav {
     }
 
     .info-block h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .info-block p {
@@ -664,8 +683,9 @@ nav {
 }
 
 .program-time {
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding-top: 0;
+    text-align: left;
 }
 
 .program-content h3 {
@@ -761,7 +781,7 @@ nav {
     flex-direction: column;
     gap: 18px;
 
-    padding-bottom: 0px;
+    padding-bottom: 20px;
 }
 
 .faq-answer p {

@@ -80,8 +80,8 @@ nav {
     position: relative;
 
 
-    gap: 100px;
-    width: min(1400px, 90vw);
+    gap: 140px;
+    width: min(1150px, 90vw);
     margin: 0 auto;
 
     padding: 0 60px;

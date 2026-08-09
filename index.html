@@ -260,7 +260,236 @@
   </div>
 </section>
 
-<script src="script.js"></script>
+<section id="photos" class="section">
+    <div class="section-container">
+
+        <h2 class="section-title">Photos</h2>
+
+        <div class="photo-filters">
+            <button class="photo-filter active" data-category="welcome">
+                Welcome
+            </button>
+
+            <button class="photo-filter" data-category="activities">
+                Activities
+            </button>
+
+            <button class="photo-filter" data-category="dj-sets">
+                DJ Sets
+            </button>
+
+            <button class="photo-filter" data-category="afters">
+                Afters
+            </button>
+        </div>
+
+        <div class="photo-gallery">
+
+            <button class="gallery-arrow gallery-prev" aria-label="Previous photo">
+                ←
+            </button>
+
+            <div class="gallery-frame">
+                <img
+                    id="gallery-image"
+                    src="images/photos/welcome/01.jpg"
+                    alt="PACSTY celebration photo"
+                >
+            </div>
+
+            <button class="gallery-arrow gallery-next" aria-label="Next photo">
+                →
+            </button>
+
+        </div>
+
+        <div class="gallery-counter">
+            <span id="gallery-current">1</span>
+            /
+            <span id="gallery-total">1</span>
+        </div>
+
+    </div>
+</section>
+
+<div class="photo-lightbox" id="photo-lightbox" aria-hidden="true">
+
+    <button
+        class="lightbox-close"
+        id="lightbox-close"
+        aria-label="Close photo">
+        ×
+    </button>
+
+    <button
+        class="lightbox-arrow lightbox-prev"
+        id="lightbox-prev"
+        aria-label="Previous photo">
+        ←
+    </button>
+
+    <div class="lightbox-content">
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt="PACSTY celebration photo"
+        >
+
+        <div class="lightbox-meta">
+            <span id="lightbox-category"></span>
+            <span id="lightbox-counter"></span>
+        </div>
+
+    </div>
+
+    <button
+        class="lightbox-arrow lightbox-next"
+        id="lightbox-next"
+        aria-label="Next photo">
+        →
+    </button>
+
+</div>
+
+
+<section id="dj-sets" class="section">
+    <div class="section-container">
+
+        <h2 class="section-title">DJ Sets</h2>
+
+        <div class="dj-set-list">
+
+            <article class="dj-set">
+                <div class="dj-set-time">21h–22h</div>
+
+                <div class="dj-set-content">
+                    <h3>Lae + DJ Detective</h3>
+
+                    <p>
+                        A little description of this part of the night
+                        and the music that was played.
+                    </p>
+
+                    <div class="soundcloud-placeholder">
+                        SoundCloud set coming soon
+                    </div>
+                </div>
+            </article>
+
+
+            <article class="dj-set">
+                <div class="dj-set-time">22h–23h</div>
+
+                <div class="dj-set-content">
+                    <h3>Upkar</h3>
+
+                    <p>
+                        Another short description of the set.
+                    </p>
+
+                    <div class="soundcloud-placeholder">
+                        SoundCloud set coming soon
+                    </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">23h–01h</div>
+
+                <div class="dj-set-content">
+                    <h3>Paso B2B Mr. Fonk</h3>
+
+                    <p>
+                        Another short description of the set.
+                    </p>
+
+                    <div class="soundcloud-placeholder">
+                        SoundCloud set coming soon
+                    </div>
+                </div>
+            </article>
+
+
+            <article class="dj-set">
+                <div class="dj-set-time">01h–03h</div>
+
+                <div class="dj-set-content">
+                    <h3>Paoler B2B Overthink 71</h3>
+
+                    <p>
+                        Another short description of the set.
+                    </p>
+
+                    <div class="soundcloud-placeholder">
+                        SoundCloud set coming soon
+                    </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">03h–05h</div>
+
+                <div class="dj-set-content">
+                    <h3>Suzanne Dolmancé B2B diestschaay upfart</h3>
+
+                    <p>
+                        Another short description of the set.
+                    </p>
+
+                    <div class="soundcloud-placeholder">
+                        SoundCloud set coming soon
+                    </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">05h–07h</div>
+
+                <div class="dj-set-content">
+                    <h3>fDiode B2B DJ Detective</h3>
+
+                    <p>
+                        Another short description of the set.
+                    </p>
+
+                    <div class="soundcloud-player">
+                          <iframe
+                                width="100%"
+                                height="166"
+                                scrolling="no"
+                                frameborder="no"
+                                allow="autoplay; encrypted-media"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2374688501%3Fsecret_token%3Ds-TDUQpx0F1Ak&color=%23f26f65&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false">
+                         </iframe>
+                     </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">01h–03h</div>
+
+                <div class="dj-set-content">
+                    <h3>DJ Name</h3>
+
+                    <p>
+                        Another short description of the set.
+                    </p>
+
+                    <div class="soundcloud-placeholder">
+                        SoundCloud set coming soon
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<script src="js/faq.js"></script>
+<script src="js/paws.js"></script>
+<script src="js/gallery.js"></script>
 
 </body>
 

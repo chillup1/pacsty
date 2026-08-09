@@ -540,6 +540,313 @@ nav {
     display: none;
 }
 
+/* ---------- PHOTOS ---------- */
+
+.photo-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.photo-filter {
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    background: transparent;
+
+    padding: 10px 18px;
+
+    font-family: "PitchSans", sans-serif;
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.photo-filter:hover,
+.photo-filter.active {
+    background: #f26f65;
+    color: white;
+    border-color: #f26f65;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    gap: 24px;
+    align-items: center;
+}
+
+.gallery-frame {
+    width: 100%;
+    height: 620px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.gallery-frame img {
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    display: block;
+}
+
+.gallery-arrow {
+    border: none;
+    background: transparent;
+
+    font-family: "Felixtowe", serif;
+    font-size: 3rem;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.gallery-arrow:hover {
+    transform: scale(1.15);
+}
+
+.gallery-counter {
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+}
+
+
+/* ---------- DJ SETS ---------- */
+
+.dj-set-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.dj-set {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 50px;
+
+    padding: 36px 0;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.dj-set:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.dj-set-time {
+    font-family: "PitchSans", sans-serif;
+    color: #f26f65;
+    font-size: 1.1rem;
+}
+
+.dj-set-content h3 {
+    margin: 0 0 10px;
+
+    font-family: "Felixtowe", serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.dj-set-content p {
+    max-width: 600px;
+
+    margin: 0 0 24px;
+
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+}
+
+.soundcloud-placeholder {
+    padding: 24px;
+
+    border: 1px dashed rgba(0,0,0,0.2);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+
+    opacity: 0.6;
+}
+
+/* ---------- PHOTO GALLERY POLISH ---------- */
+
+.gallery-frame img {
+    cursor: zoom-in;
+
+    opacity: 1;
+    transition:
+        opacity 0.18s ease,
+        transform 0.25s ease;
+}
+
+.gallery-frame img.gallery-fading {
+    opacity: 0;
+}
+
+.gallery-frame img:hover {
+    transform: scale(1.01);
+}
+
+
+/* ---------- LIGHTBOX ---------- */
+
+.photo-lightbox {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 80px;
+
+    background: rgba(15, 15, 15, 0.96);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.photo-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    width: min(1100px, 80vw);
+    height: min(800px, 80vh);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: calc(100% - 50px);
+
+    width: auto;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+.lightbox-meta {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+
+    opacity: 0.75;
+}
+
+#lightbox-category {
+    font-family: "PitchSans", sans-serif;
+    color: #f26f65;
+}
+
+.lightbox-close {
+    position: absolute;
+
+    top: 25px;
+    right: 32px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 200;
+
+    cursor: pointer;
+
+    opacity: 0.75;
+
+    transition: opacity 0.2s ease;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-family: "Felixtowe", serif;
+    font-size: 3.5rem;
+
+    cursor: pointer;
+
+    opacity: 0.7;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lightbox-arrow:hover {
+    opacity: 1;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.soundcloud-player {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 20px;
+}
+
+.soundcloud-player iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
 
 /* ---------- MOBILE ---------- */
 
@@ -796,4 +1103,99 @@ nav {
     align-self: flex-end;
 }
 
+}
+
+/* Photos mobile */
+
+.photo-filters {
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.photo-filter {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+.photo-gallery {
+    grid-template-columns: 40px 1fr 40px;
+    gap: 8px;
+}
+
+.gallery-frame {
+    height: 420px;
+}
+
+.gallery-arrow {
+    font-size: 2rem;
+}
+
+/* Photo lightbox mobile */
+
+.photo-lightbox {
+    padding: 70px 18px 30px;
+}
+
+.lightbox-content {
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: calc(100% - 60px);
+}
+
+.lightbox-arrow {
+    display: none;
+}
+
+.lightbox-close {
+    top: 18px;
+    right: 20px;
+
+    font-size: 2.2rem;
+}
+
+.lightbox-meta {
+    padding: 0 5px;
+    box-sizing: border-box;
+
+    font-size: 0.8rem;
+}
+
+/* DJ sets mobile */
+
+.dj-set {
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    padding: 26px 0;
+}
+
+.dj-set-time {
+    font-size: 0.95rem;
+}
+
+.dj-set-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+
+}
+
+.dj-set-content p {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.soundcloud-player {
+    width: 100%;
+    max-width: none;
+    margin-top: 16px;
+}
+
+.soundcloud-player iframe {
+    width: 100%;
 }

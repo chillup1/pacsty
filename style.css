@@ -682,6 +682,80 @@ nav {
     opacity: 0.6;
 }
 
+.dj-soundcloud-link {
+    display: inline-block;
+    margin-top: 6px;
+    margin-bottom: 18px;
+
+    font-family: "PitchSans", sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+
+    color: #ff6b63;
+    text-decoration: none;
+}
+
+.dj-soundcloud-link:hover {
+    text-decoration: underline;
+}
+
+.dj-profile-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 6px;
+    margin-bottom: 18px;
+
+    font-family: "PitchSans", sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.dj-profile-links a {
+    color: #ff6b63;
+    text-decoration: none;
+}
+
+.dj-profile-links a:hover {
+    text-decoration: underline;
+}
+
+.dj-link-separator {
+    color: #aaa;
+}
+
+.soundcloud-wrapper {
+    position: relative;
+}
+
+.soundcloud-wrapper iframe {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+    width: 100%;
+}
+
+.soundcloud-cat {
+    position: absolute;
+
+    width: 130px;
+
+    right: -60px;
+    top: 50%;
+
+    z-index: 1;
+
+    transform: translateY(-50%) rotate(8deg);
+
+    transition: transform 0.35s ease;
+}
+
+.cat-player:hover .soundcloud-cat {
+    transform: translateY(-50%) translateX(30px) rotate(8deg);
+}
+
 /* ---------- PHOTO GALLERY POLISH ---------- */
 
 .gallery-frame img {
@@ -1259,6 +1333,20 @@ nav {
 .soundcloud-player iframe {
     width: 100%;
 }
+
+ .soundcloud-cat {
+        width: 75px;
+        right: -12px;
+        top: auto;
+        bottom: -18px;
+
+        transform: rotate(6deg);
+    }
+
+    .cat-player:hover .soundcloud-cat {
+        transform: rotate(6deg);
+    }
+
 
 /* Aftermath hero mobile */
 

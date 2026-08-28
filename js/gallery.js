@@ -6,7 +6,8 @@ const categoryLabels = {
     welcome: "Welcome · 16h–18h",
     activities: "Activities · 19h30–21h",
     "dj-sets": "DJ Sets · 21h–08h",
-    afters: "Afters · 08h →"
+    afters: "Afters · 08h →",
+    people: "People"
 };
 
 const galleryImage = document.getElementById("gallery-image");
@@ -65,6 +66,10 @@ fetch("images/photos.json")
 
             activities: files.filter(
                 (path) => path.includes("/activities/")
+            ),
+
+            people: files.filter(
+                (path) => path.includes("/people/")
             ),
 
             "dj-sets": files.filter(
@@ -299,21 +304,16 @@ function preloadAdjacentImages() {
 // --------------------
 
 function openLightbox() {
-
-    updateLightbox();
-
-    lightbox.classList.add(
-        "active"
-    );
+    lightbox.classList.add("active");
 
     lightbox.setAttribute(
         "aria-hidden",
         "false"
     );
 
-    document.body.style.overflow =
-        "hidden";
+    document.body.style.overflow = "hidden";
 
+    updateLightbox();
 }
 
 

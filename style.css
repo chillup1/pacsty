@@ -571,13 +571,46 @@ nav {
     background: #f26f65;
     color: white;
     border-color: #f26f65;
+    -webkit-text-fill-color: white;
+
 }
+
 
 .photo-gallery {
     display: grid;
-    grid-template-columns: 70px 1fr 70px;
-    gap: 24px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "photo photo"
+        "prev next";
+
+    gap: 12px 20px;
     align-items: center;
+
+    width: 100%;
+}
+
+.gallery-frame {
+    grid-area: photo;
+
+    width: 100%;
+    height: 620px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.gallery-prev {
+    grid-area: prev;
+    justify-self: end;
+}
+
+.gallery-next {
+    grid-area: next;
+    justify-self: start;
 }
 
 .gallery-frame {
@@ -611,6 +644,9 @@ nav {
     cursor: pointer;
 
     transition: transform 0.2s ease;
+
+    color: #1f1f1f;
+    -webkit-text-fill-color: #1f1f1f;
 }
 
 .gallery-arrow:hover {
@@ -754,6 +790,53 @@ nav {
 
 .cat-player:hover .soundcloud-cat {
     transform: translateY(-50%) translateX(30px) rotate(8deg);
+}
+
+
+/* ---------- TRANSITION ---------- */
+
+.section-transition {
+    width: 100%;
+    padding: 26px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        90deg,
+        #f5b3ad 0%,
+        #ff6f61 100%
+    );
+}
+
+.section-transition span {
+    font-family: "PitchSans", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: #1f1f1f;
+}
+
+.cat-divider {
+    width: min(1200px, 90%);
+    margin: 70px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.cat-divider-line {
+    height: 1px;
+    background: rgba(31, 31, 31, 0.25);
+    flex: 1;
+}
+
+.cat-divider-cat {
+    width: 75px;
+    height: auto;
+    display: block;
 }
 
 /* ---------- PHOTO GALLERY POLISH ---------- */
@@ -980,7 +1063,6 @@ nav {
 
     transform: translateX(-50%);
 }
-
 
 /* ---------- MOBILE ---------- */
 
@@ -1239,29 +1321,64 @@ nav {
 
 
 
-/* Photos mobile */
+/* ---------- PHOTOS MOBILE ---------- */
 
 .photo-filters {
     gap: 8px;
-    margin-bottom: 28px;
-}
-
-.photo-filter {
-    padding: 8px 12px;
-    font-size: 0.85rem;
+    margin-bottom: 20px;
 }
 
 .photo-gallery {
-    grid-template-columns: 40px 1fr 40px;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "photo photo"
+        "prev next";
+
+    gap: 14px 20px;
+
+    width: 100%;
 }
 
 .gallery-frame {
-    height: 420px;
+    grid-area: photo;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.gallery-frame img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+
+    object-fit: contain;
+}
+
+.gallery-prev {
+    grid-area: prev;
+    justify-self: end;
+}
+
+.gallery-next {
+    grid-area: next;
+    justify-self: start;
 }
 
 .gallery-arrow {
     font-size: 2rem;
+    padding: 2px 12px;
+}
+
+.gallery-counter {
+    margin-top: 10px;
 }
 
 /* Photo lightbox mobile */
@@ -1404,5 +1521,16 @@ nav {
 
 .aftermath-hero .scroll-indicator {
     bottom: 24px;
+}
+
+
+.cat-divider {
+    width: 86%;
+    margin: 45px auto;
+    gap: 14px;
+}
+
+.cat-divider-cat {
+    width: 55px;
 }
 }

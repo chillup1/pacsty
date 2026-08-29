@@ -15,13 +15,503 @@
         <a href="#top" class="logo">PACSTY</a>
 
         <div class="nav-links">
-            <a href="#program">Program</a>
-            <a href="#location">Location</a>
-            <a href="#faq">FAQ</a>
-        </div>
+    <a href="#photos">Photos</a>
+    <a href="#dj-sets">DJ Sets</a>
+    <a href="#infos">Meow</a>
+</div>
     </nav>
 
-    <section class="hero">
+    <section id="aftermath" class="aftermath-hero">
+
+    <div class="aftermath-video">
+        <video autoplay muted loop playsinline>
+            <source src="gifs/happy-cats.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="aftermath-content">
+
+        <h1>Thank you</h1>
+
+        <p>
+            This night was truly unforgettable.
+            Thank you so much to each and everyone of you for celebrating this moment with us. Our hearts are still full of love! 
+        </p>
+
+    </div>
+
+    <div class="scroll-indicator">
+        <a href="#photos">
+            <span class="arrow">↓</span>
+        </a>
+    </div>
+
+</section>
+
+<section id="photos" class="section">
+    <div class="section-container">
+
+        <h2 class="section-title">Photos</h2>
+
+        <div class="photo-filters">
+            <button class="photo-filter active" data-category="welcome">
+                Welcome
+            </button>
+
+            <button class="photo-filter" data-category="activities">
+                Activities
+            </button>
+
+            <button class="photo-filter" data-category="people">
+                People
+            </button>
+
+            <button class="photo-filter" data-category="dj-sets">
+                DJ Sets
+            </button>
+
+            <button class="photo-filter" data-category="afters">
+                Afters
+            </button>
+        </div>
+
+        <div class="photo-gallery">
+
+            <button class="gallery-arrow gallery-prev" aria-label="Previous photo">
+                ←
+            </button>
+
+            <div class="gallery-frame" id="gallery-frame"></div>
+
+            <button class="gallery-arrow gallery-next" aria-label="Next photo">
+                →
+            </button>
+
+        </div>
+
+        <div class="gallery-counter">
+            <span id="gallery-current">1</span>
+            /
+            <span id="gallery-total">1</span>
+        </div>
+
+    </div>
+</section>
+
+<div class="photo-lightbox" id="photo-lightbox" aria-hidden="true">
+
+    <button
+        class="lightbox-close"
+        id="lightbox-close"
+        aria-label="Close photo">
+        ×
+    </button>
+
+    <button
+        class="lightbox-arrow lightbox-prev"
+        id="lightbox-prev"
+        aria-label="Previous photo">
+        ←
+    </button>
+
+    <div class="lightbox-content">
+
+        <div id="lightbox-media"></div>
+
+        <div class="lightbox-meta">
+            <span id="lightbox-category"></span>
+            <span id="lightbox-counter"></span>
+        </div>
+
+    </div>
+
+    <button
+        class="lightbox-arrow lightbox-next"
+        id="lightbox-next"
+        aria-label="Next photo">
+        →
+    </button>
+
+</div>
+
+ <div class="scroll-indicator">
+        <a href="#dj-sets">
+            <span class="arrow">↓</span>
+        </a>
+    </div>
+
+<section id="dj-sets" class="section">
+    <div class="section-container">
+
+        <h2 class="section-title">DJ Sets</h2>
+
+        <div class="dj-set-list">
+
+            <article class="dj-set">
+                <div class="dj-set-time">21h–22h</div>
+
+                <div class="dj-set-content">
+                    <h3>Lae B2B DJ Detective</h3>
+                 <div class="dj-profile-links">
+                    <a href="https://soundcloud.com/lae_ti"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Lae ↗
+                    </a>
+
+                    <span class="dj-link-separator">·</span>
+
+                    <a href="https://soundcloud.com/dj-detective"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        DJ Detective ↗
+                    </a>
+    </div>
+                    <div class="soundcloud-player">
+                        <div class="soundcloud-wrapper cat-player">
+                        <img
+                                src="images/cat_dj.svg"
+                                class="soundcloud-cat"
+                                id="dj-cat-1"
+
+                                alt=""
+                            >
+                        <iframe
+                            id="soundcloud-player-1"
+                            width="100%"
+                            height="300"
+                            scrolling="no"
+                            frameborder="no"
+                            allow="autoplay; encrypted-media"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2363341346%3Fsecret_token%3Ds-sSoSHlqhp6w&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                        </iframe>    
+                    </div>    
+                    </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">22h–23h</div>
+
+                <div class="dj-set-content">
+                    <h3>Upkar</h3>
+
+                    <div class="dj-profile-links">
+                    <a href="https://soundcloud.com/upkar-duncan-singh"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Upkar ↗
+                    </a>
+
+                </div>
+
+                    <div class="soundcloud-player">
+                            <div class="soundcloud-wrapper cat-player">
+
+                        <iframe width="100%"
+                        height="300"
+                        scrolling="no"
+                        frameborder="no"
+                        allow="autoplay; encrypted-media"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2388468156%3Fsecret_token%3Ds-Odwd3e35EnM&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                </div>
+                </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">23h–01h</div>
+
+                <div class="dj-set-content">
+                    <h3>Paso B2B Mr. Fonk</h3>
+
+                        <div class="dj-profile-links">
+                                            <a href="https://soundcloud.com/paso"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                                Paso ↗
+                                            </a>
+
+                                            <span class="dj-link-separator">·</span>
+
+                                            <a href="https://soundcloud.com/cracked-a"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                                Mr. Fonk ↗
+                                            </a>
+                            </div>                   
+
+                    <div class="soundcloud-player">
+                         <div class="soundcloud-wrapper cat-player">
+
+                        <iframe width="100%"
+                        height="300"
+                        scrolling="no"
+                        frameborder="no"
+                        allow="autoplay; encrypted-media"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2388468171%3Fsecret_token%3Ds-ES0KxBbxbuE&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                      </div>
+                </div>
+                 </div>
+
+            </article>
+
+
+            <article class="dj-set">
+                <div class="dj-set-time">01h–03h</div>
+
+                <div class="dj-set-content">
+                    <h3>Paoler B2B Overthink 71</h3>
+
+                    <div class="dj-profile-links">
+
+                                        <a href="https://soundcloud.com/overthink71"
+                                        target="_blank"
+                                        rel="noopener noreferrer">
+                                            Overthink 71 ↗
+                                        </a>
+                        </div>      
+
+                    <div class="soundcloud-player">
+                        <div class="soundcloud-wrapper cat-player">
+
+                        <iframe width="100%"
+                        height="300"
+                        scrolling="no"
+                        frameborder="no"
+                        allow="autoplay; encrypted-media"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2388468174%3Fsecret_token%3Ds-jV9cGZFegUy&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                    </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">03h–05h</div>
+
+                <div class="dj-set-content">
+                    <h3>Suzanne Dolmancé B2B dietschääy Up_Fart</h3>
+
+                    <div class="dj-profile-links">
+                    <a href="https://soundcloud.com/suzannedolmance"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Suzanne Dolmancé ↗
+                    </a>
+    </div>      
+
+                    <div class="soundcloud-player">
+                        <div class="soundcloud-wrapper cat-player">
+                        <iframe width="100%"
+                        height="300"
+                        scrolling="no"
+                        frameborder="no"
+                        allow="autoplay; encrypted-media"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2388468180%3Fsecret_token%3Ds-9YLXhsrrs3P&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                    </div>
+                </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">05h–07h</div>
+
+                <div class="dj-set-content">
+                    <h3>ƒDiode B2B DJ Detective</h3>
+
+<div class="dj-profile-links">
+                    <a href="https://soundcloud.com/fdiode"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        ƒDiode ↗
+                    </a>
+
+                    <span class="dj-link-separator">·</span>
+
+                    <a href="https://soundcloud.com/dj-detective"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        DJ Detective ↗
+                    </a>
+    </div>      
+                    
+                    <div class="soundcloud-player">
+                        <div class="soundcloud-wrapper cat-player">
+                        <iframe width="100%"
+                            height="300"
+                            scrolling="no"
+                            frameborder="no"
+                            allow="autoplay; encrypted-media"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2374688501%3Fsecret_token%3Ds-TDUQpx0F1Ak&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                        </iframe>
+                     </div>
+                      </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">07h–10h</div>
+
+                <div class="dj-set-content">
+                    <h3>FuFu + Amely Neko</h3>
+
+                    <div class="dj-profile-links">
+                    <a href="https://soundcloud.com/fufu-berlin"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        FuFu ↗
+                    </a>
+
+                    <span class="dj-link-separator">·</span>
+
+                    <a href="https://soundcloud.com/amelyneko"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Amely Neko ↗
+                    </a>
+    </div>    
+
+                    <div class="soundcloud-player">
+                         <div class="soundcloud-wrapper cat-player">
+                        <iframe width="100%"
+                        height="300"
+                        scrolling="no"
+                        frameborder="no"
+                        allow="autoplay; encrypted-media"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2388468198%3Fsecret_token%3Ds-Eo1TcWoAosY&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                     </div>
+                     </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">10h–14h</div>
+
+                <div class="dj-set-content">
+                    <h3>DJ Detective + Zahremaar</h3>
+
+ <div class="dj-profile-links">
+                     <a href="https://soundcloud.com/dj-detective"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        DJ Detective ↗
+                    </a>
+
+                    <span class="dj-link-separator">·</span>
+
+                    <a href="https://soundcloud.com/zahremaar"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Zahremaar ↗
+                    </a>
+    </div>   
+
+                    <div class="soundcloud-player">
+                        <div class="soundcloud-wrapper cat-player">
+                        <iframe width="100%"
+                        height="300"
+                        scrolling="no"
+                        frameborder="no"
+                        allow="autoplay; encrypted-media"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2358373799%3Fsecret_token%3Ds-uNkwBGwQMlb&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                    </div>
+                </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">14h–18h</div>
+
+                <div class="dj-set-content">
+                    <h3>Zahremaar + D.K. Dent + Paso</h3>
+
+                    <div class="dj-profile-links">
+                    <a href="https://soundcloud.com/zahremaar"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Zahremaar ↗
+                    </a>
+
+                    <span class="dj-link-separator">·</span>
+
+                    <a href="https://soundcloud.com/dk-dent-1"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        D.K. Dent ↗
+                    </a>
+
+                    <span class="dj-link-separator">·</span>
+
+                    <a href="https://soundcloud.com/paso"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                                Paso ↗
+                                            </a>
+    </div>   
+
+
+                
+                    <div class="soundcloud-player">
+                        <div class="soundcloud-wrapper cat-player">
+                        <iframe
+                            width="100%"
+                            height="300"
+                            scrolling="no"
+                            frameborder="no"
+                            allow="autoplay; encrypted-media"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2376161471%3Fsecret_token%3Ds-wxF5nwMKBb9&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true">
+                        </iframe>
+                    </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="dj-set">
+                <div class="dj-set-time">18h–19h30</div>
+
+                <div class="dj-set-content">
+                    <h3>DJ Detective</h3>
+
+<div class="dj-profile-links">
+                    <a href="https://soundcloud.com/dj-detective"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        DJ Detective ↗
+                    </a>
+
+                   
+    </div>
+
+                    <div class="soundcloud-player">
+                         <div class="soundcloud-wrapper cat-player">
+                        <iframe width="100%"
+                        height="300"
+                        scrolling="no"
+                        frameborder="no"
+                        allow="autoplay; encrypted-media"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%3Atracks%3A2388468231%3Fsecret_token%3Ds-yErEIf0EcL4&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+                    </div>
+                </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<div class="invite-transition">
+ <img
+        src="images/cat_divider.svg"
+        class="invite-edge-cat"
+        alt=""
+        aria-hidden="true"
+    >
+    <span>The Invite</span>
+</div>
+
+    <section id="infos" class="hero">
 
          <h1 class="hero-title hero-title-mobile">
              <span class="name">Laeti</span>
@@ -115,7 +605,7 @@
     </div>
 
     <div class="program-item">
-        <div class="program-time">21h–10h</div>
+        <div class="program-time">21h–12h</div>
 
         <div class="program-content">
             <h3>DJ Sets</h3>
@@ -126,7 +616,7 @@
     </div>
 
     <div class="program-item">
-        <div class="program-time">10h → ∞</div>
+        <div class="program-time">12h → ∞</div>
 
         <div class="program-content">
             <h3>After Hours</h3>
@@ -251,7 +741,7 @@
         </button>
         <div class="faq-answer">
             <div class="faq-answer-inner">
-                <p>Yes however for logistical reasons we will curate the timetable until 10am. If you are brave enough to stay up until then you will certainly have the opportunity to play for the after hours, and we would love that!</p>
+                <p>Yes however for logistical reasons we will curate the timetable until 12pm. If you are brave enough to stay up until then you will certainly have the opportunity to play for the after hours, and we would love that!</p>
             </div>
         </div>
       </div>
@@ -260,8 +750,12 @@
   </div>
 </section>
 
-<script src="script.js"></script>
 <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+
+<script src="https://w.soundcloud.com/player/api.js"></script>
+<script src="js/faq.js"></script>
+<script src="js/paws.js"></script>
+<script src="js/gallery.js"></script> main
 
 </body>
 

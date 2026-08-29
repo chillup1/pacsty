@@ -571,3 +571,134 @@ function addSwipeSupport(element) {
 
 addSwipeSupport(galleryFrame);
 addSwipeSupport(lightboxMedia);
+
+
+const djSets = document.querySelectorAll(".dj-set");
+
+djSets.forEach((djSet, index) => {
+
+    const soundcloudIframe =
+        djSet.querySelector("iframe");
+
+    const catNumber = index + 1;
+
+    // Create the cat automatically
+    const cat = document.createElement("img");
+
+    cat.src = `images/cat_dj${catNumber}.svg`;
+    cat.classList.add("soundcloud-cat");
+
+  const catSides = {
+    1: "right",
+    2: "left",
+    3: "right",
+    4: "left",
+    5: "right",
+    6: "right",
+    7: "right",
+    8: "right",
+    9: "left",
+    10: "right"
+};
+
+const catMobilePositions = {
+    1: "center",
+    2: "right",
+    3: "right",
+    4: "right",
+    5: "center",
+    6: "center",
+    7: "right",
+    8: "center",
+    9: "center",
+    10: "center"
+};
+
+const catMobileSizes = {
+    1: "large",
+    2: "normal",
+    3: "large",
+    4: "normal",
+    5: "normal",
+    6: "large",
+    7: "normal",
+    8: "large",
+    9: "large",
+    10: "large"
+};
+
+const catMobileShifts = {
+    1: "",
+    2: "shift-left",
+    3: "shift-left",
+    4: "shift-left",
+    5: "shift-right",
+    6: "",
+    7: "shift-left",
+    8: "shift-right",
+    9: "shift-right",
+    10: ""
+};
+
+cat.classList.add(`cat-${catSides[catNumber]}`);
+
+cat.classList.add(
+    `cat-mobile-${catMobilePositions[catNumber]}`
+);
+
+cat.classList.add(
+    `cat-mobile-${catMobileSizes[catNumber]}`
+);
+
+// Add optional mobile horizontal shift
+if (catMobileShifts[catNumber]) {
+    cat.classList.add(
+        `cat-mobile-${catMobileShifts[catNumber]}`
+    );
+}
+
+
+    cat.alt = "";
+    cat.setAttribute("aria-hidden", "true");
+
+    // Put cat inside the SoundCloud wrapper
+    const wrapper =
+        djSet.querySelector(".soundcloud-wrapper");
+
+    if (!wrapper || !soundcloudIframe) {
+        return;
+    }
+
+    wrapper.appendChild(cat);
+
+
+    // Connect this cat to this SoundCloud player
+    if (window.SC) {
+
+        const widget =
+            SC.Widget(soundcloudIframe);
+
+        widget.bind(
+            SC.Widget.Events.PLAY,
+            () => {
+                cat.classList.add("visible");
+                cat.classList.add("dancing");
+            }
+        );
+
+        widget.bind(
+            SC.Widget.Events.PAUSE,
+            () => {
+                cat.classList.remove("dancing");
+            }
+        );
+
+        widget.bind(
+            SC.Widget.Events.FINISH,
+            () => {
+                cat.classList.remove("dancing");
+            }
+        );
+    }
+
+});

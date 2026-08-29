@@ -777,23 +777,130 @@ nav {
     position: absolute;
 
     width: 130px;
-
-    right: -60px;
     top: 50%;
 
     z-index: 1;
 
-    transform: translateY(-50%) rotate(8deg);
+    transform: translateY(-50%);
 
     transition: transform 0.35s ease;
 }
 
-.cat-player:hover .soundcloud-cat {
-    transform: translateY(-50%) translateX(30px) rotate(8deg);
+/* Odd sets: cat on the right */
+.soundcloud-cat.cat-right {
+    right: -60px;
+    left: auto;
+
+    transform: translateY(-50%) rotate(8deg);
+}
+
+/* Even sets: cat on the left */
+.soundcloud-cat.cat-left {
+    left: -60px;
+    right: auto;
+
+    transform: translateY(-50%) rotate(-8deg);
+}
+
+@media (min-width: 901px) {
+
+.cat-player:hover .soundcloud-cat.cat-right {
+    transform: translateY(-50%) translateX(60px) rotate(8deg);
+}
+
+.cat-player:hover .soundcloud-cat.cat-left {
+    transform: translateY(-50%) translateX(-60px) rotate(-8deg);
+}
+}
+
+@keyframes dj-cat-dance {
+    0% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    25% {
+        transform: translateY(-5px) rotate(3deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    75% {
+        transform: translateY(-3px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+}
+
+@media (min-width: 901px) {
+    .soundcloud-cat.visible {
+        opacity: 1;
+    }
+
+    .soundcloud-cat.dancing {
+        animation: none;
+    }
 }
 
 
+
 /* ---------- TRANSITION ---------- */
+
+.invite-transition {
+    position: relative;
+    overflow: hidden;
+
+
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+background: linear-gradient(
+    to bottom,
+    rgba(242, 111, 101, 0.75) 0%,
+    rgba(242, 111, 101, 0.48) 25%,
+    rgba(242, 111, 101, 0.22) 55%,
+    rgba(242, 111, 101, 0.06) 80%,
+    rgba(242, 111, 101, 0) 100%
+);
+}
+
+.invite-transition span {
+    margin-top: 45px;
+
+    font-family: "PitchSans", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+}
+
+.invite-edge-cat {
+    position: absolute;
+    width: 115px;
+
+    top: -2px;
+    right: 12%;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.invite-cat {
+    position: absolute;
+
+    width: 75px;
+
+    right: 22%;
+    top: 8px;
+
+    transform: rotate(5deg);
+}
 
 .section-transition {
     width: 100%;
@@ -1478,19 +1585,94 @@ nav {
     width: 100%;
 }
 
- .soundcloud-cat {
-        width: 75px;
-        right: -12px;
-        top: auto;
-        bottom: -18px;
+.soundcloud-cat,
+.soundcloud-cat.cat-left,
+.soundcloud-cat.cat-right {
+    width: 70px;
 
-        transform: rotate(6deg);
+    top: 50%;
+    bottom: auto;
+
+    z-index: 3;
+
+    opacity: 0;
+
+    transform: translateY(-50%) translateX(10px) rotate(5deg);
+
+    filter: invert(1);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.soundcloud-cat.cat-mobile-large {
+    width: 105px;
+}
+
+/* Mobile cat positions */
+
+.soundcloud-cat.cat-mobile-right {
+    right: 10px;
+    left: auto;
+}
+
+.soundcloud-cat.cat-mobile-center {
+    left: 50%;
+    right: auto;
+}
+
+.soundcloud-cat.cat-mobile-left {
+    left: 10px;
+    right: auto;
+}
+
+/* Individual fine positioning */
+
+.soundcloud-cat.cat-mobile-shift-right {
+    translate: 20px 0;
+}
+
+.soundcloud-cat.cat-mobile-shift-left {
+    translate: -20px 0;
+}
+
+.soundcloud-cat.visible {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) rotate(5deg);
+}
+
+.soundcloud-cat.cat-mobile-center.visible {
+    transform: translate(-50%, -50%) rotate(5deg);
+}
+
+.soundcloud-cat.dancing {
+    animation: dj-cat-dance-mobile 0.7s ease-in-out infinite;
+}
+
+.soundcloud-cat.cat-mobile-center.dancing {
+    animation: dj-cat-dance-mobile-center 0.7s ease-in-out infinite;
+}
+
+@keyframes dj-cat-dance-mobile {
+    0%, 100% {
+        transform: translateY(-50%) rotate(2deg);
     }
 
-    .cat-player:hover .soundcloud-cat {
-        transform: rotate(6deg);
+    50% {
+        transform: translateY(calc(-50% - 5px)) rotate(-3deg);
+    }
+}
+
+@keyframes dj-cat-dance-mobile-center {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(2deg);
     }
 
+    50% {
+        transform: translate(-50%, calc(-50% - 5px)) rotate(-3deg);
+    }
+}
 
 /* Aftermath hero mobile */
 
@@ -1560,4 +1742,12 @@ nav {
 .cat-divider-cat {
     width: 55px;
 }
+
+.invite-edge-cat {
+    width: 85px;
+    right: 6%;
+    left: auto;
+    top: -2px;
+}
+
 }

@@ -10,7 +10,7 @@ const categoryLabels = {
     people: "People"
 };
 
-const galleryImage = document.getElementById("gallery-image");
+const galleryFrame = document.getElementById("gallery-frame");
 
 const galleryCurrent =
     document.getElementById("gallery-current");
@@ -30,8 +30,7 @@ const nextButton =
 const lightbox =
     document.getElementById("photo-lightbox");
 
-const lightboxImage =
-    document.getElementById("lightbox-image");
+const lightboxMedia = document.getElementById("lightbox-media");
 
 const lightboxClose =
     document.getElementById("lightbox-close");
@@ -47,6 +46,92 @@ const lightboxCategory =
 
 const lightboxCounter =
     document.getElementById("lightbox-counter");
+
+    function getFileExtension(path) {
+    return path.split(".").pop().toLowerCase();
+}
+
+function isVideo(path) {
+    return ["mp4", "mov", "webm"].includes(getFileExtension(path));
+}
+
+function createMediaElement(path, lightbox = false) {
+    const encodedPath = encodeURI(path);
+
+    console.log("Loading media:", path);
+    console.log("Encoded path:", encodedPath);
+
+    if (isVideo(path)) {
+        const video = document.createElement("video");
+
+        video.controls = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+
+        // Useful for iPhone/Safari
+        video.setAttribute("playsinline", "");
+        video.setAttribute("webkit-playsinline", "");
+
+        const source = document.createElement("source");
+        source.src = encodedPath;
+
+        // All our converted web videos should be MP4
+        if (getFileExtension(path) === "mp4") {
+            source.type = "video/mp4";
+        } else if (getFileExtension(path) === "webm") {
+            source.type = "video/webm";
+        }
+
+        video.appendChild(source);
+
+        if (lightbox) {
+            // Don't autoplay for now while debugging.
+            // Autoplay with audio can be blocked by browsers.
+            video.autoplay = false;
+        }
+
+        video.addEventListener("loadedmetadata", () => {
+            console.log(
+                "VIDEO OK:",
+                path,
+                "duration:",
+                video.duration
+            );
+        });
+
+        video.addEventListener("canplay", () => {
+            console.log("VIDEO CAN PLAY:", path);
+        });
+
+        video.addEventListener("error", () => {
+            console.error(
+                "VIDEO ERROR:",
+                path,
+                video.error
+            );
+        });
+
+        source.addEventListener("error", () => {
+            console.error(
+                "VIDEO SOURCE ERROR:",
+                source.src
+            );
+        });
+
+        return video;
+    }
+
+    const img = document.createElement("img");
+
+    img.src = encodedPath;
+    img.alt = "PACSTY celebration photo";
+
+    img.addEventListener("error", () => {
+        console.error("IMAGE ERROR:", path);
+    });
+
+    return img;
+}
 
 
 // --------------------
@@ -102,13 +187,11 @@ function getCurrentImages() {
 }
 
 
-function updateGallery(animate = true) {
-
+function updateGallery() {
     const images = getCurrentImages();
 
-    if (images.length === 0) {
-
-        galleryImage.style.display = "none";
+    if (!images || images.length === 0) {
+        galleryFrame.innerHTML = "";
 
         galleryCurrent.textContent = "0";
         galleryTotal.textContent = "0";
@@ -116,60 +199,28 @@ function updateGallery(animate = true) {
         return;
     }
 
-    const imagePath = images[currentIndex];
+    const mediaPath = images[currentIndex];
 
+    // Remove the previous photo/video
+    galleryFrame.innerHTML = "";
 
-    if (!animate) {
+    // Create either an <img> or <video>
+    const media = createMediaElement(mediaPath);
 
-        galleryImage.src = encodeURI(imagePath);
+    media.classList.add("gallery-media");
 
-    } else {
+    galleryFrame.appendChild(media);
 
-        galleryImage.classList.add(
-            "gallery-fading"
-        );
+    galleryCurrent.textContent = currentIndex + 1;
+    galleryTotal.textContent = images.length;
 
-        setTimeout(() => {
+    preloadAdjacentMedia();
 
-            galleryImage.src =
-                encodeURI(imagePath);
-
-        }, 160);
-
+    // If the lightbox happens to be open,
+    // keep it synchronized with the current media.
+    if (lightbox.classList.contains("active")) {
+        updateLightbox();
     }
-
-
-    galleryImage.onload = () => {
-
-        galleryImage.style.display = "block";
-
-        galleryImage.classList.remove(
-            "gallery-fading"
-        );
-
-        preloadAdjacentImages();
-
-    };
-
-
-    galleryImage.onerror = () => {
-
-        console.error(
-            "Could not load image:",
-            imagePath
-        );
-
-    };
-
-
-    galleryCurrent.textContent =
-        currentIndex + 1;
-
-    galleryTotal.textContent =
-        images.length;
-
-
-    updateLightbox();
 }
 
 
@@ -266,38 +317,34 @@ document
 // PRELOAD PHOTOS
 // --------------------
 
-function preloadAdjacentImages() {
 
+function preloadAdjacentMedia() {
     const images = getCurrentImages();
 
     if (images.length < 2) return;
 
-
     const nextIndex =
-        (currentIndex + 1) %
-        images.length;
+        (currentIndex + 1) % images.length;
 
     const previousIndex =
-        (currentIndex - 1 + images.length) %
-        images.length;
-
+        (currentIndex - 1 + images.length) % images.length;
 
     [
         images[nextIndex],
         images[previousIndex]
-
     ].forEach((src) => {
 
-        const preload =
-            new Image();
-
-        preload.src =
-            encodeURI(src);
+        if (isVideo(src)) {
+            const video = document.createElement("video");
+            video.src = encodeURI(src);
+            video.preload = "metadata";
+        } else {
+            const img = new Image();
+            img.src = encodeURI(src);
+        }
 
     });
-
 }
-
 
 // --------------------
 // LIGHTBOX
@@ -335,42 +382,40 @@ function closeLightbox() {
 
 
 function updateLightbox() {
+    const images = getCurrentImages();
 
-    if (
-        !lightbox ||
-        !lightbox.classList.contains("active")
-    ) {
+    if (!images || images.length === 0) {
+        lightboxMedia.innerHTML = "";
         return;
     }
 
+    const mediaPath = images[currentIndex];
 
-    const images =
-        getCurrentImages();
+    // Remove previous fullscreen photo/video
+    lightboxMedia.innerHTML = "";
 
-    if (images.length === 0) return;
+    // Create the correct media type
+    const media = createMediaElement(mediaPath, true);
 
+    media.classList.add("lightbox-media");
 
-    lightboxImage.src =
-        encodeURI(
-            images[currentIndex]
-        );
-
+    lightboxMedia.appendChild(media);
 
     lightboxCategory.textContent =
-        categoryLabels[currentCategory]
-        || currentCategory;
-
+        categoryLabels[currentCategory] || currentCategory;
 
     lightboxCounter.textContent =
         `${currentIndex + 1} of ${images.length}`;
-
 }
 
 
-galleryImage.addEventListener(
-    "click",
-    openLightbox
-);
+galleryFrame.addEventListener("click", (event) => {
+    if (event.target.tagName === "VIDEO") {
+        return;
+    }
+
+    openLightbox();
+});
 
 
 lightboxClose.addEventListener(
@@ -524,10 +569,5 @@ function addSwipeSupport(element) {
 }
 
 
-addSwipeSupport(
-    document.querySelector(".gallery-frame")
-);
-
-addSwipeSupport(
-    lightboxImage
-);
+addSwipeSupport(galleryFrame);
+addSwipeSupport(lightboxMedia);

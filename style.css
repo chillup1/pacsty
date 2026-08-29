@@ -613,18 +613,9 @@ nav {
     justify-self: start;
 }
 
-.gallery-frame {
-    width: 100%;
-    height: 620px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    overflow: hidden;
-}
-
-.gallery-frame img {
+.gallery-media {
     max-width: 100%;
     max-height: 100%;
 
@@ -632,6 +623,15 @@ nav {
     height: auto;
 
     display: block;
+    object-fit: contain;
+}
+
+.gallery-frame video {
+    max-width: 100%;
+    max-height: 620px;
+
+    width: auto;
+    height: auto;
 }
 
 .gallery-arrow {
@@ -841,20 +841,18 @@ nav {
 
 /* ---------- PHOTO GALLERY POLISH ---------- */
 
-.gallery-frame img {
-    cursor: zoom-in;
-
+.gallery-media {
     opacity: 1;
     transition:
         opacity 0.18s ease,
         transform 0.25s ease;
 }
 
-.gallery-frame img.gallery-fading {
-    opacity: 0;
+.gallery-frame img.gallery-media {
+    cursor: zoom-in;
 }
 
-.gallery-frame img:hover {
+.gallery-frame img.gallery-media:hover {
     transform: scale(1.01);
 }
 
@@ -900,20 +898,34 @@ nav {
     gap: 18px;
 }
 
-.lightbox-content img {
+#lightbox-media {
+    width: 100%;
+    height: calc(100% - 50px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-media {
     max-width: 100%;
-    max-height: calc(100% - 50px);
+    max-height: 100%;
 
     width: auto;
     height: auto;
 
     display: block;
-
     object-fit: contain;
 }
 
 .lightbox-meta {
-    width: 100%;
+    position: fixed;
+
+    left: 4%;
+    right: 4%;
+    bottom: 20px;
+
+    width: auto;
 
     display: flex;
     justify-content: space-between;
@@ -959,9 +971,9 @@ nav {
 
 .lightbox-arrow {
     position: absolute;
-    top: 50%;
 
-    transform: translateY(-50%);
+    bottom: 58px;
+    top: auto;
 
     border: none;
     background: transparent;
@@ -969,28 +981,31 @@ nav {
     color: white;
 
     font-family: "Felixtowe", serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
 
     cursor: pointer;
 
-    opacity: 0.7;
+    opacity: 0.75;
 
     transition:
         opacity 0.2s ease,
         transform 0.2s ease;
 }
 
+.lightbox-prev {
+    left: 50%;
+    transform: translateX(-70px);
+}
+
+.lightbox-next {
+    right: 50%;
+    transform: translateX(70px);
+}
+
 .lightbox-arrow:hover {
     opacity: 1;
 }
 
-.lightbox-prev {
-    left: 30px;
-}
-
-.lightbox-next {
-    right: 30px;
-}
 
 .soundcloud-player {
     width: 100%;
@@ -1353,13 +1368,20 @@ nav {
     overflow: hidden;
 }
 
-.gallery-frame img {
+.gallery-media {
     width: 100%;
     max-width: 100%;
+
     height: auto;
     max-height: none;
 
     object-fit: contain;
+}
+
+.gallery-frame video {
+    width: 100%;
+    height: auto;
+    max-height: none;
 }
 
 .gallery-prev {
@@ -1392,9 +1414,14 @@ nav {
     height: 100%;
 }
 
-.lightbox-content img {
+#lightbox-media {
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+.lightbox-media {
     max-width: 100%;
-    max-height: calc(100% - 60px);
+    max-height: 100%;
 }
 
 .lightbox-arrow {
